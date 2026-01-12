@@ -49,31 +49,36 @@ export const BRANDS: BrandWithImage[] = [
     name: "Zemote", 
     tagline: "Touch Switches",
     description: "Experience the tactile elegance of glass-finish touch interfaces. Zemote combines minimalist aesthetics with rapid responsiveness, turning every interaction with your home into a moment of pure luxury.",
-    imageUrl: "/assets/zemote/zemote-switches.png" 
+    imageUrl: "/assets/zemote/zemote-switches.png",
+    url: "https://www.zemote.in/"
   },
   { 
     name: "KEF", 
     tagline: "Wireless Hi-Fi Speakers",
     description: "The pinnacle of British audio engineering. KEF's Uni-Q technology delivers a soundstage so precise and immersive that it disappears, leaving only the artist's performance in your living space.",
-    imageUrl: "/assets/kef/kef.png" 
+    imageUrl: "/assets/kef/kef.png",
+    url: "https://international.kef.com/"
   },
   { 
     name: "TIS Control", 
     tagline: "Smart Building IT Services",
     description: "Robust infrastructure meets intelligent automation. TIS provides the sophisticated backbone required for modern smart buildings, ensuring 100% uptime and seamless communication across all subsystems.",
-    imageUrl: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=1000" 
+    imageUrl: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=1000",
+    url: "https://www.tiscontrol.com/"
   },
   { 
     name: "Panasonic", 
     tagline: "ERV Fresh Air Tech",
     description: "Superior air quality is the ultimate luxury. Panasonic's Energy Recovery Ventilators (ERV) continuously exchange stale indoor air with purified, temperature-tempered outdoor air for a healthier home.",
-    imageUrl: "/assets/panasonic/panasonic.png" 
+    imageUrl: "/assets/panasonic/panasonic.png",
+    url: "https://na.panasonic.com/"
   },
   { 
     name: "Cleair", 
     tagline: "Renson Louvred Solutions",
     description: "Expanding the boundaries of your home. Cleair's motorized louvred roofs offer architectural sophistication and climate-controlled comfort for your outdoor terraces, regardless of the season.",
-    imageUrl: "/assets/cleair/renson.png" 
+    imageUrl: "/assets/cleair/renson.png",
+    url: "https://cleair.in/"
   }
 ];
 

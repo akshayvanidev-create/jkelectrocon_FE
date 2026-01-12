@@ -36,23 +36,23 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen selection:bg-blue-500 selection:text-white bg-[#050B1F]">
       {/* Header with glassmorphism that appears on scroll */}
-      <header className={`fixed top-0 left-0 w-full z-50 py-8 px-6 md:px-20 flex justify-between items-center transition-all duration-500 ${
+      <header className={`fixed top-0 left-0 w-full z-50 py-4 md:py-8 px-4 md:px-12 lg:px-20 flex justify-between items-center transition-all duration-500 ${
         isScrolled 
           ? 'bg-gradient-to-b from-[#050B1F]/95 to-[#050B1F]/80 backdrop-blur-md shadow-2xl' 
           : 'bg-transparent'
       }`}>
-        <div className="flex items-center gap-4">
-          <img src="/assets/brand-logo.jpeg" alt="JK Electrocon" className="h-12 w-auto" />
-          <div className="text-2xl font-black tracking-tighter uppercase text-white">
+        <div className="flex items-center gap-2 md:gap-4">
+          <img src="/assets/brand-logo.jpeg" alt="JK Electrocon" className="h-8 md:h-12 w-auto object-contain" />
+          <div className="text-base md:text-2xl font-black tracking-tighter uppercase text-white">
             JK <span className="text-blue-500">Electrocon</span>
           </div>
         </div>
-        <nav className="hidden md:flex gap-12 text-[11px] font-bold uppercase tracking-[0.4em] text-white/50">
+        <nav className="hidden lg:flex gap-6 lg:gap-12 text-[11px] font-bold uppercase tracking-[0.4em] text-white/50">
           <a href="#portfolio" onClick={(e) => handleNavClick(e, '#portfolio')} className="hover:text-white hover:tracking-[0.5em] transition-all duration-500">Portfolio</a>
           <a href="#solutions" onClick={(e) => handleNavClick(e, '#solutions')} className="hover:text-white hover:tracking-[0.5em] transition-all duration-500">Services</a>
           <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="hover:text-white hover:tracking-[0.5em] transition-all duration-500">Contact</a>
         </nav>
-        <button className="px-8 py-3 border border-white/10 rounded-full text-[10px] uppercase tracking-widest font-black hover:bg-white hover:text-navy-900 transition-all duration-300">
+        <button className="px-4 md:px-8 py-2 md:py-3 border border-white/10 rounded-full text-[9px] md:text-[10px] uppercase tracking-widest font-black hover:bg-white hover:text-navy-900 transition-all duration-300">
           Inquire
         </button>
       </header>

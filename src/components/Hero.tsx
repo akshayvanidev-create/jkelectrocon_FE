@@ -167,7 +167,7 @@ const Hero: React.FC = () => {
           </span>
         </div>
         
-        <h1 ref={titleRef} className="text-5xl md:text-8xl font-extrabold mb-6 tracking-tighter text-white leading-[1.1] opacity-0 drop-shadow-2xl">
+        <h1 ref={titleRef} className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold mb-4 md:mb-6 tracking-tighter text-white leading-[1.1] opacity-0 drop-shadow-2xl px-4">
           {SLIDE_DATA[currentSlide].title.split(' ').map((word, i, arr) => (
             <React.Fragment key={i}>
               {i === arr.length - 1 ? (
@@ -181,27 +181,27 @@ const Hero: React.FC = () => {
           ))}
         </h1>
 
-        <div className="relative inline-block mb-10 max-w-3xl mx-auto">
+        <div className="relative inline-block mb-8 md:mb-10 max-w-3xl mx-auto px-4">
           <div className="absolute inset-0 bg-black/40 blur-xl rounded-2xl"></div>
-          <p ref={paraRef} className="relative text-xl md:text-2xl text-white font-normal tracking-wide px-6 py-3 opacity-0 drop-shadow-lg">
+          <p ref={paraRef} className="relative text-base sm:text-lg md:text-xl lg:text-2xl text-white font-normal tracking-wide px-4 md:px-6 py-2 md:py-3 opacity-0 drop-shadow-lg">
             {SLIDE_DATA[currentSlide].subtitle}
           </p>
         </div>
 
-        <div ref={btnRef} className="flex flex-col sm:flex-row gap-6 justify-center items-center opacity-0">
+        <div ref={btnRef} className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center opacity-0 px-4">
           <a 
             href="#portfolio"
-            className="group relative px-10 py-5 text-lg font-bold text-[#050B1F] bg-white rounded-full overflow-hidden transition-all duration-300 shadow-2xl shadow-blue-500/20"
+            className="group relative px-6 md:px-10 py-4 md:py-5 text-base md:text-lg font-bold text-[#050B1F] bg-white rounded-full overflow-hidden transition-all duration-300 shadow-2xl shadow-blue-500/20"
           >
             <span className="relative z-10 group-hover:text-white transition-colors duration-500">Explore Collections</span>
             <div className="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
           </a>
-          <button className="text-white/60 hover:text-white text-sm font-bold uppercase tracking-widest flex items-center gap-3 transition-colors">
-            <span className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          {/* <button className="text-white/60 hover:text-white text-xs md:text-sm font-bold uppercase tracking-widest flex items-center gap-2 md:gap-3 transition-colors">
+            <span className="w-8 md:w-10 h-8 md:h-10 rounded-full border border-white/20 flex items-center justify-center">
+              <svg className="w-3 md:w-4 h-3 md:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </span>
-            Watch Film
-          </button>
+            <span className="hidden sm:inline">Watch</span>
+          </button> */}
         </div>
       </div>
       

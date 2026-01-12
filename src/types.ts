@@ -10,6 +10,7 @@ export interface Brand {
   name: string;
   tagline: string;
   description?: string;
+  url?: string;
 }
 
 export interface Partner {

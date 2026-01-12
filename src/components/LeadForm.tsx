@@ -49,27 +49,27 @@ const LeadForm: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} id="contact" className="py-20 px-4 md:px-20 bg-[#050B1F] relative">
+    <section ref={sectionRef} id="contact" className="py-12 md:py-20 px-4 md:px-12 lg:px-20 bg-[#050B1F] relative">
       {/* Decorative background blur */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
       
       <div className="max-w-screen-2xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 items-start">
           
           {/* Brand Contact Information */}
-          <div className="contact-info space-y-16 gsap-reveal">
-            <div className="space-y-6">
-              <h2 className="text-sm uppercase tracking-[0.6em] text-blue-500 font-black">Concierge</h2>
-              <h3 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none">
+          <div className="contact-info space-y-8 md:space-y-16 gsap-reveal">
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="text-xs md:text-sm uppercase tracking-[0.4em] md:tracking-[0.6em] text-blue-500 font-black">Concierge</h2>
+              <h3 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none">
                 Start Your <br/>
                 <span className="text-white/30 italic font-light">Journey.</span>
               </h3>
-              <p className="text-muted text-xl font-light max-w-md pt-4">
+              <p className="text-muted text-base md:text-lg lg:text-xl font-light max-w-md pt-2 md:pt-4">
                 Our specialists are ready to curate your bespoke automation ecosystem.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
               <div className="space-y-4 group cursor-default">
                 <h4 className="text-xs font-black uppercase tracking-widest text-blue-500/60 group-hover:text-blue-500 transition-colors">Headquarters</h4>
                 <p className="text-lg text-muted font-light leading-relaxed group-hover:text-white transition-colors">
