@@ -61,9 +61,6 @@ const BrandSpotlight: React.FC = () => {
                      <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-white">{brand.name}</span>
                   </div>
                 </div>
-                
-                {/* Decorative Elements */}
-                <div className={`absolute -bottom-6 md:-bottom-10 ${index % 2 === 1 ? '-left-6 md:-left-10' : '-right-6 md:-right-10'} w-24 h-24 md:w-40 md:h-40 border border-blue-500/20 rounded-full -z-10 group-hover:scale-125 group-hover:border-blue-500/40 transition-all duration-700`}></div>
               </div>
 
               {/* Text Narrative */}

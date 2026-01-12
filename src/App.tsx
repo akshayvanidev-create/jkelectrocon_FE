@@ -43,8 +43,9 @@ const App: React.FC = () => {
       }`}>
         <div className="flex items-center gap-2 md:gap-4">
           <img src="/assets/brand-logo.jpeg" alt="JK Electrocon" className="h-8 md:h-12 w-auto object-contain" />
-          <div className="text-base md:text-2xl font-black tracking-tighter uppercase text-white">
-            JK <span className="text-blue-500">Electrocon</span>
+          <div className="text-lg md:text-3xl font-black tracking-tight text-white flex items-baseline gap-1.5">
+            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">JK</span>
+            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(59,130,246,0.5)]">Electrocon</span>
           </div>
         </div>
         <nav className="hidden lg:flex gap-6 lg:gap-12 text-[11px] font-bold uppercase tracking-[0.4em] text-white/50">

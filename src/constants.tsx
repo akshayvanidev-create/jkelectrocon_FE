@@ -63,7 +63,7 @@ export const BRANDS: BrandWithImage[] = [
     name: "TIS Control", 
     tagline: "Smart Building IT Services",
     description: "Robust infrastructure meets intelligent automation. TIS provides the sophisticated backbone required for modern smart buildings, ensuring 100% uptime and seamless communication across all subsystems.",
-    imageUrl: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "/assets/tis/tis.png",
     url: "https://www.tiscontrol.com/"
   },
   { 
