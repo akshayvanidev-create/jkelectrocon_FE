@@ -4,22 +4,22 @@ import { gsap } from 'gsap';
 
 const SLIDE_DATA = [
   {
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2400",
     title: "Elegance that Anticipates.",
     subtitle: "Architecting high-fidelity smart living for the next generation."
   },
   {
-    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&q=80&w=2000",
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=2400",
     title: "Cinematic Immersion.",
     subtitle: "Experience studio-grade acoustics in the comfort of your sanctuary."
   },
   {
-    image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=2000",
+    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=2400",
     title: "Seamless Orchestration.",
     subtitle: "Complete control of your environment with a single intuitive touch."
   },
   {
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000",
+    image: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&q=80&w=2400",
     title: "Invisible Intelligence.",
     subtitle: "Advanced ERV & purification systems for a healthier, purer home."
   }
@@ -60,22 +60,22 @@ const Hero: React.FC = () => {
     
     tl.fromTo(badgeRef.current, 
       { opacity: 0, y: -20 }, 
-      { opacity: 1, y: 0, duration: 1, delay: 0.2 }
+      { opacity: 1, y: 0, duration: 0.8, delay: 0.2 }
     )
     .fromTo(titleRef.current, 
-      { opacity: 0, y: 80, skewY: 5 }, 
-      { opacity: 1, y: 0, skewY: 0, duration: 1.5 }, 
-      "-=0.5"
+      { opacity: 0, y: 50, skewY: 3 }, 
+      { opacity: 1, y: 0, skewY: 0, duration: 1.2 }, 
+      "-=0.4"
     )
     .fromTo(paraRef.current, 
       { opacity: 0, y: 20 }, 
-      { opacity: 1, y: 0, duration: 1 }, 
-      "-=1"
+      { opacity: 1, y: 0, duration: 0.8 }, 
+      "-=0.8"
     )
     .fromTo(btnRef.current, 
-      { opacity: 0, scale: 0.9, y: 20 }, 
-      { opacity: 1, scale: 1, y: 0, duration: 1 }, 
-      "-=0.8"
+      { opacity: 0, scale: 0.95, y: 15 }, 
+      { opacity: 1, scale: 1, y: 0, duration: 0.8 }, 
+      "-=0.6"
     );
 
     // Initial slide zoom
@@ -167,7 +167,7 @@ const Hero: React.FC = () => {
           </span>
         </div>
         
-        <h1 ref={titleRef} className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold mb-4 md:mb-6 tracking-tighter text-white leading-[1.1] opacity-0 drop-shadow-2xl px-4">
+        <h1 ref={titleRef} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold mb-4 md:mb-6 tracking-tighter text-white leading-[1.05] opacity-0 drop-shadow-2xl px-2">
           {SLIDE_DATA[currentSlide].title.split(' ').map((word, i, arr) => (
             <React.Fragment key={i}>
               {i === arr.length - 1 ? (
@@ -181,17 +181,17 @@ const Hero: React.FC = () => {
           ))}
         </h1>
 
-        <div className="relative inline-block mb-8 md:mb-10 max-w-3xl mx-auto px-4">
+        <div className="relative inline-block mb-8 md:mb-10 max-w-3xl mx-auto px-2">
           <div className="absolute inset-0 bg-black/40 blur-xl rounded-2xl"></div>
-          <p ref={paraRef} className="relative text-base sm:text-lg md:text-xl lg:text-2xl text-white font-normal tracking-wide px-4 md:px-6 py-2 md:py-3 opacity-0 drop-shadow-lg">
+          <p ref={paraRef} className="relative text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-normal tracking-wide px-4 md:px-6 py-3 md:py-4 opacity-0 drop-shadow-lg">
             {SLIDE_DATA[currentSlide].subtitle}
           </p>
         </div>
 
-        <div ref={btnRef} className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center opacity-0 px-4">
+        <div ref={btnRef} className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center opacity-0 px-2">
           <a 
             href="#portfolio"
-            className="group relative px-6 md:px-10 py-4 md:py-5 text-base md:text-lg font-bold text-[#050B1F] bg-white rounded-full overflow-hidden transition-all duration-300 shadow-2xl shadow-blue-500/20"
+            className="group relative px-8 md:px-10 py-4 md:py-5 text-base md:text-lg font-bold text-[#050B1F] bg-white rounded-full overflow-hidden transition-all duration-300 shadow-2xl shadow-blue-500/20"
           >
             <span className="relative z-10 group-hover:text-white transition-colors duration-500">Explore Collections</span>
             <div className="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>

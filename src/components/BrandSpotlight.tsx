@@ -11,6 +11,7 @@ const BrandSpotlight: React.FC = () => {
     const items = document.querySelectorAll('.brand-item');
     
     items.forEach((item) => {
+      // Scroll animation
       gsap.fromTo(item, 
         { opacity: 0, y: 60 },
         { 
@@ -25,6 +26,32 @@ const BrandSpotlight: React.FC = () => {
           }
         }
       );
+
+      // Hover animations
+      const img = item.querySelector('.brand-img-wrap');
+      const badge = item.querySelector('.brand-badge');
+      const title = item.querySelector('.brand-title');
+      const description = item.querySelector('.brand-description');
+      const button = item.querySelector('.brand-button');
+      const bgGlow = item.querySelector('.brand-bg-glow');
+
+      item.addEventListener('mouseenter', () => {
+        gsap.to(bgGlow, { opacity: 1, scale: 1.05, duration: 0.6, ease: "power2.out" });
+        gsap.to(img, { scale: 1.05, duration: 0.8, ease: "power2.out" });
+        gsap.to(badge, { y: -5, duration: 0.4, ease: "back.out(2)" });
+        gsap.to(title, { x: 10, duration: 0.5, ease: "power2.out" });
+        gsap.to(description, { x: 5, duration: 0.5, delay: 0.1, ease: "power2.out" });
+        gsap.to(button, { scale: 1.05, duration: 0.3, ease: "back.out(2)" });
+      });
+
+      item.addEventListener('mouseleave', () => {
+        gsap.to(bgGlow, { opacity: 0, scale: 1, duration: 0.6, ease: "power2.in" });
+        gsap.to(img, { scale: 1, duration: 0.8, ease: "power2.in" });
+        gsap.to(badge, { y: 0, duration: 0.4, ease: "power2.in" });
+        gsap.to(title, { x: 0, duration: 0.5, ease: "power2.in" });
+        gsap.to(description, { x: 0, duration: 0.5, ease: "power2.in" });
+        gsap.to(button, { scale: 1, duration: 0.3, ease: "power2.in" });
+      });
     });
   }, []);
 
@@ -43,8 +70,14 @@ const BrandSpotlight: React.FC = () => {
           {BRANDS.map((brand, index) => (
             <div 
               key={brand.name} 
-              className={`brand-item flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-16 lg:gap-32 items-center group`}
+              className={`brand-item relative flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-16 lg:gap-32 items-center group cursor-pointer p-6 md:p-10 lg:p-16`}
             >
+              {/* Animated Background Glow */}
+              <div className="brand-bg-glow absolute inset-0 -z-10 opacity-0 rounded-[4rem]">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-purple-600/5"></div>
+              </div>
+
               {/* Visual Showcase */}
               <div className="brand-img-wrap w-full md:w-3/5 relative">
                 <div className="aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-2xl md:rounded-[3rem] relative shadow-2xl shadow-blue-500/10 group-hover:shadow-blue-500/30 transition-all duration-500">
@@ -66,17 +99,17 @@ const BrandSpotlight: React.FC = () => {
               {/* Text Narrative */}
               <div className="brand-content w-full md:w-2/5 space-y-4 md:space-y-8">
                 <div className="space-y-2">
-                  <span className="inline-block text-blue-400 font-black tracking-widest uppercase text-[9px] md:text-[10px] px-3 py-1 bg-blue-500/10 rounded-full border border-blue-500/20 group-hover:border-blue-500/40 transition-all duration-300">{brand.tagline}</span>
-                  <h4 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter group-hover:text-blue-400 transition-colors duration-300">
+                  <span className="brand-badge inline-block text-blue-400 font-black tracking-widest uppercase text-[9px] md:text-[10px] px-3 py-1 bg-blue-500/10 rounded-full border border-blue-500/20 group-hover:border-blue-500/40 transition-all duration-300">{brand.tagline}</span>
+                  <h4 className="brand-title text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter group-hover:text-blue-400 transition-colors duration-300">
                     {brand.name}
                   </h4>
                 </div>
                 
-                <p className="text-base md:text-xl lg:text-2xl text-muted font-light leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+                <p className="brand-description text-base md:text-xl lg:text-2xl text-muted font-light leading-relaxed group-hover:text-white/90 transition-colors duration-300">
                   {brand.description}
                 </p>
 
-                <div className="pt-6">
+                <div className="brand-button pt-6">
                   <a 
                     href={brand.url} 
                     target="_blank" 
