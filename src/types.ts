@@ -11,6 +11,7 @@ export interface Brand {
   tagline: string;
   description?: string;
   url?: string;
+  brandLogo?: string;
 }
 
 export interface Partner {
