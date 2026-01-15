@@ -87,24 +87,26 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 blur-[120px] rounded-full"></div>
       </div>
 
-      <div className="relative flex flex-col items-center gap-12 z-10">
+      <div className="relative flex flex-col items-center gap-2 sm:gap-6 md:gap-10 z-10">
         {/* Animated Icon */}
+
         <div
           ref={logoRef}
-          className="relative w-32 h-32 flex items-center justify-center"
+          className="relative w-28 h-28 xs:w-32 xs:h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 flex items-center justify-center"
         >
           <img
             src="/assets/brand-logo.jpeg"
             alt="JK Electrocon"
-            className="h-8 md:h-100 w-auto object-contain"
+            className="h-24 w-24 xs:h-28 xs:w-28 sm:h-32 sm:w-32 md:h-36 md:w-36 object-contain"
           />
         </div>
 
         {/* Brand Text */}
-        <div className="relative overflow-hidden px-4">
+        <div className="relative overflow-hidden px-1 w-full">
           <h1
             ref={textRef}
-            className="text-xl md:text-3xl font-black tracking-[0.8em] text-white whitespace-nowrap uppercase"
+            className="text-[1.1rem] xs:text-lg sm:text-xl md:text-3xl font-black tracking-[0.04em] xs:tracking-[0.08em] sm:tracking-[0.15em] md:tracking-[0.5em] text-white break-words text-center uppercase leading-tight"
+           
           >
             {brandName.split("").map((char, i) => (
               <span
