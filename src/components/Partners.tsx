@@ -4,9 +4,9 @@ import { PARTNERS } from '../constants';
 
 const Partners: React.FC = () => {
   return (
-    <section className="py-16 bg-navy-900 border-y border-white/5 overflow-hidden">
+    <section className="py-16 bg-background border-y border-button/20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-8 text-center">
-        <p className="text-sm uppercase tracking-widest text-muted">Crafted with global smart-home leaders</p>
+        <p className="text-sm uppercase tracking-widest text-hover">Crafted with global smart-home leaders</p>
       </div>
       
       <div className="flex w-fit animate-scroll whitespace-nowrap">

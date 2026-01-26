@@ -85,13 +85,13 @@ const BrandSpotlight: React.FC = () => {
   }, []);
 
   return (
-    <section id="portfolio" className="py-12 md:py-20 bg-[#050B1F] overflow-hidden">
+    <section id="portfolio" className="py-12 md:py-20 bg-background overflow-hidden">
       <div className="max-w-screen-2xl mx-auto px-4 md:px-12 lg:px-20">
         <div className="mb-16 md:mb-32">
-          <h2 className="text-xs md:text-sm uppercase tracking-[0.4em] md:tracking-[0.5em] text-blue-500 font-black mb-4 md:mb-6">Technology Partners</h2>
-          <h3 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none">
+          <h2 className="text-xs md:text-sm uppercase tracking-[0.4em] md:tracking-[0.5em] text-hover font-black mb-4 md:mb-6">Technology Partners</h2>
+          <h3 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none text-button">
             Excellence <br/>
-            <span className="text-white/30 italic font-light">Meets Innovation.</span>
+            <span className="text-hover italic font-light">Meets Innovation.</span>
           </h3>
         </div>
 
@@ -102,34 +102,41 @@ const BrandSpotlight: React.FC = () => {
               className={`brand-item relative flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-16 lg:gap-32 items-center p-6 md:p-10 lg:p-16`}
             >
               {/* Animated Background Glow */}
-              <div className="brand-bg-glow absolute inset-0 -z-10 opacity-0 rounded-[4rem]">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 blur-3xl"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-purple-600/5"></div>
-              </div>
+                <div className="brand-bg-glow absolute inset-0 -z-10 opacity-0 rounded-[4rem]">
+                  <div className="absolute inset-0 bg-gradient-to-r from-button/10 via-hover/10 to-button/10 blur-3xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-hover/5 to-button/5"></div>
+                </div>
 
               {/* Visual Showcase */}
-              <div className="brand-img-wrap w-full md:w-3/5 relative">
-                <div className="aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-2xl md:rounded-[3rem] relative shadow-2xl shadow-blue-500/10 transition-all duration-500">
+              <a
+                href={brand.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="brand-img-wrap w-full md:w-3/5 relative block group"
+                tabIndex={0}
+                aria-label={`Visit ${brand.name} website`}
+              >
+                <div className="aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-2xl md:rounded-[3rem] relative shadow-2xl shadow-button/10 transition-all duration-500 group-hover:scale-105">
                   <img 
                     src={brand.imageUrl} 
                     alt={`${brand.name} Products`}
                     loading="lazy"
                     className="w-full h-full object-cover object-center transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#050B1F]/60 to-transparent transition-colors duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-background/60 to-transparent transition-colors duration-500"></div>
                 </div>
-              </div>
+              </a>
 
               {/* Text Narrative */}
               <div className="brand-content w-full md:w-2/5 space-y-4 md:space-y-8">
                 <div className="space-y-2">
-                  <span className="brand-badge inline-block text-blue-400 font-black tracking-widest uppercase text-[9px] md:text-[10px] px-3 py-1 bg-blue-500/10 rounded-full border border-blue-500/20 transition-all duration-300">{brand.tagline}</span>
-                  <h4 className="brand-title text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter transition-colors duration-300">
+                  <span className="brand-badge inline-block text-hover font-black tracking-widest uppercase text-[9px] md:text-[10px] px-3 py-1 bg-hover/10 rounded-full border border-hover/20 transition-all duration-300">{brand.tagline}</span>
+                  <h4 className="brand-title text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter transition-colors duration-300 text-button">
                     {brand.name}
                   </h4>
                 </div>
                 
-                <p className="brand-description text-base md:text-xl lg:text-2xl text-muted font-light leading-relaxed transition-colors duration-300">
+                <p className="brand-description text-base md:text-xl text-text font-light leading-relaxed transition-colors duration-300">
                   {brand.description}
                 </p>
 
@@ -138,10 +145,10 @@ const BrandSpotlight: React.FC = () => {
                     href={brand.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="relative px-10 py-4 overflow-hidden border border-white/20 rounded-full inline-block bg-white transition-shadow duration-300"
+                    className="group relative px-10 py-4 overflow-hidden border border-button rounded-full inline-block bg-button transition-shadow duration-300 shadow-2xl shadow-button/20 hover:bg-hover hover:border-hover"
                   >
-                    <span className="relative z-10 text-[11px] font-black uppercase tracking-[0.3em] text-[#050B1F] transition-colors duration-500">View Products</span>
-                    <div className="absolute inset-0 bg-[#050B1F] translate-y-full transition-transform duration-500 ease-out"></div>
+                    <span className="relative z-10 text-[11px] font-black uppercase tracking-[0.3em] text-background group-hover:text-background transition-colors duration-500">View Products</span>
+                    <div className="absolute inset-0 bg-hover translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
                   </a>
                 </div>
                 

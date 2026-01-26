@@ -8,8 +8,9 @@ interface PreloaderProps {
 const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLHeadingElement>(null);
-  const letterRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const brandJKRef = useRef<HTMLSpanElement>(null);
+  const brandElectroconRef = useRef<HTMLSpanElement>(null);
+  const shimmerRef = useRef<HTMLDivElement>(null);
   const sweepRef = useRef<HTMLDivElement>(null);
 
   const brandName = "JK ELECTROCON";
@@ -30,41 +31,63 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
     // 1. Initial State
     gsap.set(containerRef.current, { opacity: 1 });
     gsap.set(logoRef.current, { scale: 0.8, opacity: 0, filter: "blur(10px)" });
-    gsap.set(letterRefs.current, { opacity: 0, y: 20, rotateX: -90 });
-    gsap.set(sweepRef.current, { x: "-100%" });
+    gsap.set(brandJKRef.current, { opacity: 0, scale: 0.92, x: -20, letterSpacing: "0.2em" });
+    gsap.set(brandElectroconRef.current, { opacity: 0, scale: 0.92, x: 20, letterSpacing: "0.2em" });
+    gsap.set(shimmerRef.current, { left: "-60%", opacity: 0 });
 
     // 2. Animate Logo/Icon
     tl.to(logoRef.current, {
       scale: 1,
       opacity: 1,
       filter: "blur(0px)",
-      duration: 1.5,
+      duration: 1.2,
       ease: "power4.out",
     })
-      // 3. Reveal Brand Name Letter by Letter
+      // Brand name fade-in and scale
       .to(
-        letterRefs.current,
+        brandJKRef.current,
         {
           opacity: 1,
-          y: 0,
-          rotateX: 0,
-          duration: 0.8,
-          stagger: 0.05,
-          ease: "back.out(1.7)",
+          scale: 1,
+          x: 0,
+          letterSpacing: "0.25em",
+          duration: 0.7,
+          ease: "power3.out",
+        },
+        "-=0.7"
+      )
+      .to(
+        brandElectroconRef.current,
+        {
+          opacity: 1,
+          scale: 1,
+          x: 0,
+          letterSpacing: "0.25em",
+          duration: 0.7,
+          ease: "power3.out",
+        },
+        "-=0.6"
+      )
+      // Gold shimmer sweep
+      .to(
+        shimmerRef.current,
+        {
+          left: "100%",
+          opacity: 1,
+          duration: 1.2,
+          ease: "power2.inOut",
         },
         "-=0.5"
       )
-      // 4. Subtle Glow Sweep
       .to(
-        sweepRef.current,
+        shimmerRef.current,
         {
-          x: "200%",
-          duration: 1.5,
-          ease: "power2.inOut",
+          opacity: 0,
+          duration: 0.3,
         },
-        "-=0.2"
+        "+=0.1"
       )
-      // 5. Hold for a moment
+      // Hold for a moment
       .to({}, { duration: 1 });
 
     // Floating animation for the logo
@@ -80,11 +103,11 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[100] bg-[#050B1F] flex items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-[100] bg-background flex items-center justify-center overflow-hidden"
     >
       {/* Background Ambience */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 blur-[120px] rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-button/10 blur-[120px] rounded-full"></div>
       </div>
 
       <div className="relative flex flex-col items-center gap-2 sm:gap-6 md:gap-10 z-10">
@@ -103,21 +126,38 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
 
         {/* Brand Text */}
         <div className="relative overflow-hidden px-1 w-full">
-          <h1
-            ref={textRef}
-            className="text-[1.1rem] xs:text-lg sm:text-xl md:text-3xl font-black tracking-[0.04em] xs:tracking-[0.08em] sm:tracking-[0.15em] md:tracking-[0.5em] text-white break-words text-center uppercase leading-tight"
-           
+          <div
+            className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tight text-text flex items-baseline gap-3 justify-center relative"
+            style={{
+              letterSpacing: '0.25em',
+            }}
           >
-            {brandName.split("").map((char, i) => (
-              <span
-                key={i}
-                ref={(el) => (letterRefs.current[i] = el)}
-                className="inline-block"
-              >
-                {char === " " ? "\u00A0" : char}
-              </span>
-            ))}
-          </h1>
+            <span
+              ref={brandJKRef}
+              className="text-button bg-clip-text text-transparent bg-gradient-to-r from-button to-hover"
+              style={{letterSpacing: '0.25em'}}
+            >
+              JK
+            </span>
+            <span
+              ref={brandElectroconRef}
+              className="text-hover bg-clip-text text-transparent bg-gradient-to-r from-hover to-button"
+              style={{letterSpacing: '0.25em'}}
+            >
+              Electrocon
+            </span>
+            {/* Gold shimmer sweep */}
+            <div
+              ref={shimmerRef}
+              className="absolute top-0 left-0 w-2/3 h-full pointer-events-none"
+              style={{
+                background: 'linear-gradient(120deg, transparent 0%, #F2D675 50%, transparent 100%)',
+                opacity: 0,
+                mixBlendMode: 'screen',
+                borderRadius: '2em',
+              }}
+            ></div>
+          </div>
           {/* Luxury Sweep Effect */}
           <div
             ref={sweepRef}
@@ -126,15 +166,15 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
         </div>
         {/* Tagline */}
         <div className="overflow-hidden">
-          <p className="text-[10px] font-bold tracking-[0.4em] uppercase text-blue-500/60 opacity-0 animate-[fade-in_1s_ease-out_1.5s_forwards]">
+          <p className="text-[10px] font-bold tracking-[0.4em] uppercase text-hover opacity-0 animate-[fade-in_1s_ease-out_1.5s_forwards]">
             Intelligent Lifestyle Engineering
           </p>
         </div>
       </div>
       {/* Bottom status */}
       <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex items-center gap-4 opacity-20">
-        <div className="w-1 h-1 bg-white rounded-full animate-ping"></div>
-        <span className="text-[8px] font-black uppercase tracking-[0.5em]">
+        <div className="w-1 h-1 bg-button rounded-full animate-ping"></div>
+        <span className="text-[8px] font-black uppercase tracking-[0.5em] text-hover">
           Establishing Secure Connection
         </span>
       </div>

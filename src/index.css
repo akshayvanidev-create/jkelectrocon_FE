@@ -3,14 +3,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @theme {
+  --color-background: #0F0C0A;
+  --color-card: #1C1612;
+  --color-text: #EAE6E1;
+  --color-button: #D4AF37;
+  --color-hover: #F2D675;
+  /* legacy colors (if needed) */
   --color-navy-900: #050B1F;
   --color-navy-800: #0A1229;
   --color-accent: #F5F7FA;
   --color-muted: #94A3B8;
-  
   --font-family-heading: 'Plus Jakarta Sans', sans-serif;
   --font-family-body: 'Poppins', sans-serif;
-  
   --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
@@ -27,8 +31,8 @@
   }
 
   body {
-    background-color: #050B1F;
-    color: #F5F7FA;
+    background-color: var(--color-background);
+    color: var(--color-text);
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
   }
@@ -38,17 +42,17 @@
   }
 
   ::selection {
-    background-color: #3b82f6;
-    color: white;
+    background-color: var(--color-hover);
+    color: var(--color-background);
   }
 }
 
 @layer components {
   .glass {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(218, 174, 55, 0.03); /* button color, very transparent */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-card);
   }
 }
 

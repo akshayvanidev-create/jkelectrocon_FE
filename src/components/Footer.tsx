@@ -3,7 +3,7 @@ import { BRANDS } from "../constants";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="py-16 md:py-20 bg-gradient-to-b from-[#0A1229] to-[#050B1F] border-t border-white/10">
+    <footer className="py-16 md:py-20 bg-gradient-to-b from-card to-background border-t border-button/20">
       <div className="max-w-screen-2xl mx-auto px-4 md:px-12 lg:px-20">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-16 mb-16">
@@ -16,15 +16,11 @@ const Footer: React.FC = () => {
                 className="h-10 md:h-12 w-auto object-contain"
               />
               <h2 className="text-xl md:text-3xl font-black tracking-tight flex items-baseline gap-1.5">
-                <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  JK
-                </span>
-                <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(59,130,246,0.5)]">
-                  Electrocon
-                </span>
+                <span className="text-button">JK</span>
+                <span className="text-hover"> Electrocon</span>
               </h2>
             </div>
-            <p className="text-muted text-base md:text-lg max-w-md font-light leading-relaxed mb-8">
+            <p className="text-text text-base md:text-lg max-w-md font-light leading-relaxed mb-8">
               Defining the future of residential luxury through cutting-edge
               intelligent automation and engineering excellence.
             </p>
@@ -33,11 +29,11 @@ const Footer: React.FC = () => {
             <div className="space-y-3 text-sm md:text-base">
               <a
                 href="mailto:jkelectrocon@gmail.com"
-                className="flex items-center gap-3 text-muted hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-text hover:text-hover transition-colors group"
               >
-                <div className="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center group-hover:bg-blue-500/20 group-hover:border-blue-500/40 transition-all">
+                <div className="w-10 h-10 rounded-full bg-button/10 border border-button/20 flex items-center justify-center group-hover:bg-hover/20 group-hover:border-hover/40 transition-all">
                   <svg
-                    className="w-5 h-5 text-blue-400"
+                    className="w-5 h-5 text-button"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -54,11 +50,11 @@ const Footer: React.FC = () => {
               </a>
               <a
                 href="tel:+918817345776"
-                className="flex items-center gap-3 text-muted hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-text hover:text-hover transition-colors group"
               >
-                <div className="w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center group-hover:bg-blue-500/20 group-hover:border-blue-500/40 transition-all">
+                <div className="w-10 h-10 rounded-full bg-button/10 border border-button/20 flex items-center justify-center group-hover:bg-hover/20 group-hover:border-hover/40 transition-all">
                   <svg
-                    className="w-5 h-5 text-blue-400"
+                    className="w-5 h-5 text-button"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -78,7 +74,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs md:text-sm font-black uppercase tracking-widest mb-6 text-blue-400">
+                <h4 className="text-xs md:text-sm font-black uppercase tracking-widest mb-6 text-hover">
               Explore
             </h4>
             <ul className="space-y-3 text-sm md:text-base">
@@ -119,22 +115,22 @@ const Footer: React.FC = () => {
 
           {/* Partners Section */}
           <div className="lg:col-span-5">
-            <h4 className="text-xs md:text-sm font-black uppercase tracking-widest mb-6 text-blue-400">
+                <h4 className="text-xs md:text-sm font-black uppercase tracking-widest mb-6 text-hover">
               Technology Partners
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
               {BRANDS.map((brand) => (
-                <a
-                  key={brand.name}
-                  href={brand.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center justify-center px-4 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-500/40 rounded-xl transition-all duration-300 hover:scale-105"
-                >
-                  <span className="text-xs md:text-sm font-bold text-muted group-hover:text-white transition-colors">
-                    {brand.name}
-                  </span>
-                </a>
+                    <a
+                      key={brand.name}
+                      href={brand.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-center px-4 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-hover rounded-xl transition-all duration-300 hover:scale-105"
+                    >
+                      <span className="text-xs md:text-sm font-bold text-muted group-hover:text-white transition-colors">
+                        {brand.name}
+                      </span>
+                    </a>
               ))}
             </div>
           </div>
@@ -145,20 +141,8 @@ const Footer: React.FC = () => {
           <p className="text-muted">
             © 2026 JK Electrocon. All rights reserved.
           </p>
-          <div className="flex items-center gap-8">
-            <a
-              href="#"
-              className="text-muted hover:text-white transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-muted hover:text-white transition-colors"
-            >
-              Terms of Service
-            </a>
-            <div className="flex gap-4">
+              <div className="flex items-center gap-8">
+                <div className="flex gap-4">
               <a
                 href="#"
                 className="w-8 h-8 rounded-full bg-white/5 hover:bg-blue-500 border border-white/10 hover:border-blue-500 flex items-center justify-center transition-all duration-300 group"
