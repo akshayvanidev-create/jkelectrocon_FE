@@ -95,7 +95,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
           className="relative w-28 h-28 xs:w-32 xs:h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 flex items-center justify-center"
         >
           <img
-            src="/assets/brand-logo.jpeg"
+            src="/assets/brand-logo.png"
             alt="JK Electrocon"
             className="h-24 w-24 xs:h-28 xs:w-28 sm:h-32 sm:w-32 md:h-36 md:w-36 object-contain"
           />

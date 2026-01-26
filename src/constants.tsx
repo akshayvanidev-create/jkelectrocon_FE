@@ -57,6 +57,26 @@ export interface BrandWithImage extends Brand {
 
 export const BRANDS: BrandWithImage[] = [
   {
+    name: "TIS Control",
+    tagline: "Smart Building IT Services",
+    description:
+      "TIS Control is a global smart home and building automation brand offering wired and wireless solutions for lighting, HVAC, security, energy management, and hotel systems with elegant, affordable products sold via international distributors.",
+    imageUrl: "/assets/tis/tis.png",
+    url: "https://www.tiscontrol.com/",
+    brandLogo: "/assets/tis/tis-logo.png",
+  },
+
+  {
+    name: "DrainVAC",
+    tagline: "Reliable, Powerful, Versatile.",
+    description:
+      "DrainVAC delivers powerful, reliable central vacuum systems, engineered for quiet operation, advanced wet-dry cleaning, durability, and effortless maintenance, worldwide trusted.",
+    imageUrl: "/assets/drainvac/drainvac.png",
+    url: "https://www.drainvac.in/index.html",
+    brandLogo: "/assets/drainvac/drainvac-logo.png",
+  },
+
+  {
     name: "Zemote",
     tagline: "Touch Switches",
     description:
@@ -74,15 +94,7 @@ export const BRANDS: BrandWithImage[] = [
     url: "https://international.kef.com/",
     brandLogo: "/assets/kef/kef-logo.png",
   },
-  {
-    name: "TIS Control",
-    tagline: "Smart Building IT Services",
-    description:
-      "TIS Control is a global smart home and building automation brand offering wired and wireless solutions for lighting, HVAC, security, energy management, and hotel systems with elegant, affordable products sold via international distributors.",
-    imageUrl: "/assets/tis/tis.png",
-    url: "https://www.tiscontrol.com/",
-    brandLogo: "/assets/tis/tis-logo.png",
-  },
+
   {
     name: "Panasonic",
     tagline: "ERV Fresh Air Tech",

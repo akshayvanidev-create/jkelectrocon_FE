@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3 md:gap-4 mb-6">
               <img
-                src="/assets/brand-logo.jpeg"
+                src="/assets/brand-logo.png"
                 alt="JK Electrocon"
                 className="h-10 md:h-12 w-auto object-contain"
               />

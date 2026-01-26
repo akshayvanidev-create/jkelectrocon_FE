@@ -52,7 +52,7 @@ const App: React.FC = () => {
         >
           <div className="flex items-center gap-2 md:gap-4">
             <img
-              src="/assets/brand-logo.jpeg"
+              src="/assets/brand-logo.png"
               alt="JK Electrocon"
               className="h-8 md:h-12 w-auto object-contain"
             />
