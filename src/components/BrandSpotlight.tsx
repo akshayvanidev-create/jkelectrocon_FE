@@ -88,11 +88,6 @@ const BrandSpotlight: React.FC = () => {
                     className="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#050B1F]/60 to-transparent group-hover:from-[#050B1F]/40 transition-colors duration-500"></div>
-                  
-                  {/* Floating Brand Badge */}
-                  <div className="absolute top-6 right-6 md:top-10 md:right-10 bg-white/5 backdrop-blur-xl border border-white/10 px-4 py-2 md:px-8 md:py-4 rounded-full opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                     <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-white">{brand.name}</span>
-                  </div>
                 </div>
               </div>
 

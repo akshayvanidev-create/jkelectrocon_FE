@@ -218,7 +218,6 @@ const Hero: React.FC = () => {
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-10 hidden md:block z-20">
         <div className="flex flex-col items-center gap-4">
-          <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/30 rotate-90 origin-left translate-x-3 translate-y-24 whitespace-nowrap">Scroll to explore</span>
           <div className="w-[1px] h-20 bg-gradient-to-b from-blue-500 via-white/10 to-transparent"></div>
         </div>
       </div>

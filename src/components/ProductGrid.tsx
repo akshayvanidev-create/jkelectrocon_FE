@@ -62,14 +62,6 @@ const ProductGrid: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050B1F] via-[#050B1F]/20 to-transparent"></div>
-                
-                {/* Index Indicator */}
-                <div className="absolute top-4 left-4 md:top-6 md:left-6 w-10 h-10 md:w-12 md:h-12 rounded-full glass border border-white/10 flex items-center justify-center">
-                  <span className="text-[10px] md:text-xs font-black tabular-nums text-white/40 group-hover:text-blue-400 transition-colors">
-                    0{index + 1}
-                  </span>
-                </div>
               </div>
 
               {/* Content */}
