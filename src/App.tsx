@@ -84,7 +84,13 @@ const App: React.FC = () => {
               Contact
             </a>
           </nav>
-          <button className="px-4 md:px-8 py-2 md:py-3 border border-button rounded-full text-[9px] md:text-[10px] uppercase tracking-widest font-black bg-button text-background hover:bg-hover hover:text-background transition-all duration-300">
+          <button
+            className="px-4 md:px-8 py-2 md:py-3 border border-button rounded-full text-[9px] md:text-[10px] uppercase tracking-widest font-black bg-button text-background hover:bg-hover hover:text-background transition-all duration-300"
+            onClick={() => {
+              const el = document.querySelector('#contact');
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+          >
             Inquire
           </button>
         </header>
@@ -101,7 +107,7 @@ const App: React.FC = () => {
 
         {/* Global WhatsApp FAB */}
         <a
-          href="https://wa.me/919810000000"
+          href="https://wa.me/+918817345776"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-8 right-8 z-[60] w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:bg-[#1ebe57] hover:scale-110 transition-transform duration-300"

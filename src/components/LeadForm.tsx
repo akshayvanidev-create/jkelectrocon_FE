@@ -45,10 +45,32 @@ const LeadForm: React.FC = () => {
     );
   }, []);
 
+  const nameRef = React.useRef<HTMLInputElement>(null);
+  const phoneRef = React.useRef<HTMLInputElement>(null);
+  const emailRef = React.useRef<HTMLInputElement>(null);
+  const interestRef = React.useRef<HTMLSelectElement>(null);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
-    setTimeout(() => setStatus("success"), 1500);
+
+    // Collect form data
+    const name = nameRef.current?.value || "";
+    const phone = phoneRef.current?.value || "";
+    const email = emailRef.current?.value || "";
+    const interest = interestRef.current?.options[interestRef.current.selectedIndex]?.text || "";
+
+    // Compose WhatsApp message
+    const message = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nInterest: ${interest}`
+    );
+    const waUrl = `https://wa.me/+918817345776?text=${message}`;
+
+    // Redirect to WhatsApp after a short delay for UX
+    setTimeout(() => {
+      window.location.href = waUrl;
+      setStatus("success");
+    }, 800);
   };
 
   return (
@@ -102,6 +124,8 @@ const LeadForm: React.FC = () => {
                   jkelectrocon@gmail.com
                   <br />
                   +918817345776
+                  <br />
+                  +919111444595
                 </p>
               </div>
             </div>
@@ -159,6 +183,7 @@ const LeadForm: React.FC = () => {
                         required
                         placeholder="e.g. Alexander Vance"
                         className="w-full bg-card border border-button/20 rounded-2xl py-3 px-4 focus:outline-none focus:border-hover focus:bg-hover/10 focus:ring-4 focus:ring-hover/10 transition-all placeholder:text-hover/40 text-base sm:text-lg font-light text-text"
+                        ref={nameRef}
                       />
                     </div>
                     {/* Contact Row */}
@@ -172,6 +197,7 @@ const LeadForm: React.FC = () => {
                           required
                           placeholder="+91 ...."
                           className="w-full bg-card border border-button/20 rounded-2xl py-3 px-4 focus:outline-none focus:border-hover focus:bg-hover/10 transition-all placeholder:text-hover/40 text-base sm:text-lg font-light text-text"
+                          ref={phoneRef}
                         />
                       </div>
                       <div className="relative group/field">
@@ -183,6 +209,7 @@ const LeadForm: React.FC = () => {
                           required
                           placeholder="vance@domain.com"
                           className="w-full bg-card border border-button/20 rounded-2xl py-3 px-4 focus:outline-none focus:border-hover focus:bg-hover/10 transition-all placeholder:text-hover/40 text-base sm:text-lg font-light text-text"
+                          ref={emailRef}
                         />
                       </div>
                     </div>
@@ -194,6 +221,7 @@ const LeadForm: React.FC = () => {
                       <select
                         required
                         className="w-full bg-card border border-button/20 rounded-2xl py-3 px-4 focus:outline-none focus:border-hover focus:bg-hover/10 transition-all appearance-none text-base sm:text-lg font-light text-text cursor-pointer"
+                        ref={interestRef}
                       >
                         <option
                           value=""
