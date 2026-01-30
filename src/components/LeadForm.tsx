@@ -231,17 +231,20 @@ const LeadForm: React.FC = () => {
                         >
                           Select Objective
                         </option>
-                        <option value="automation" className="bg-background">
-                          Smart Home Ecosystem
+                        <option value="home-automation" className="bg-background">
+                          Home automation
+                        </option>
+                        <option value="vacuum" className="bg-background">
+                          Centralised vacuum system
+                        </option>
+                        <option value="ventilation" className="bg-background">
+                          Fresh air and ventilation
                         </option>
                         <option value="theatre" className="bg-background">
-                          Private Cinema & Hi-Fi
+                          Home theatre
                         </option>
-                        <option value="security" className="bg-background">
-                          Advanced Bio-Security
-                        </option>
-                        <option value="climate" className="bg-background">
-                          Pure Air & Climate
+                        <option value="cctv" className="bg-background">
+                          CCTV security and networking
                         </option>
                       </select>
                       <div className="absolute right-6 bottom-[22px] pointer-events-none opacity-40">

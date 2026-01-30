@@ -69,7 +69,7 @@ const About: React.FC = () => {
         {/* Stats Grid */}
         <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 lg:gap-12 max-w-5xl mx-auto">
           <div className="stat-item text-center space-y-2 md:space-y-3 group cursor-default">
-            <div className="text-3xl md:text-4xl lg:text-5xl font-black text-button group-hover:scale-110 transition-transform duration-300">150+</div>
+            <div className="text-3xl md:text-4xl lg:text-5xl font-black text-button group-hover:scale-110 transition-transform duration-300">500+</div>
             <div className="text-[10px] md:text-xs lg:text-sm uppercase tracking-widest text-text/40 font-bold group-hover:text-hover transition-colors">Projects Delivered</div>
           </div>
           <div className="stat-item text-center space-y-2 md:space-y-3 group cursor-default">

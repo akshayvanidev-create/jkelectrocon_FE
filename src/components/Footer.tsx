@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
           {/* Partners Section */}
           <div className="lg:col-span-5">
             <h4 className="text-xs md:text-sm font-black uppercase tracking-widest mb-6 text-hover">
-              Technology Partners
+              Official Dealer
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
               {BRANDS.map((brand) => (
@@ -146,13 +146,13 @@ const Footer: React.FC = () => {
               {/* Instagram */}
               <a
                 href="https://www.instagram.com/jkelectrocon?igsh=aXhsNTJrbzhpOGZ6"
-                className="w-8 h-8 rounded-full bg-white/5 hover:bg-blue-500 border border-white/10 hover:border-blue-500 flex items-center justify-center transition-all duration-300 group"
+                className="w-12 h-12 rounded-full bg-white/5 hover:bg-blue-500 border border-white/10 hover:border-blue-500 flex items-center justify-center transition-all duration-300 group"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
               >
                 <svg
-                  className="w-4 h-4 text-muted group-hover:text-white"
+                  className="w-6 h-6 text-muted group-hover:text-white"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -162,13 +162,13 @@ const Footer: React.FC = () => {
               {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/company/jk-electrocon/"
-                className="w-8 h-8 rounded-full bg-white/5 hover:bg-blue-600 border border-white/10 hover:border-blue-600 flex items-center justify-center transition-all duration-300 group"
+                className="w-12 h-12 rounded-full bg-white/5 hover:bg-blue-600 border border-white/10 hover:border-blue-600 flex items-center justify-center transition-all duration-300 group"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
                 <svg
-                  className="w-4 h-4 text-muted group-hover:text-white"
+                  className="w-6 h-6 text-muted group-hover:text-white"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
